@@ -2,6 +2,22 @@ import random
 
 print('**********TASK #1**********', end='\n\n')
 
+## власні функції пошуку максимуму в матриці та потрібного сортування
+def find_max(matrix):
+	m = matrix[0][0]
+	for line in matrix:
+		if m < max(line):
+			m = max(line)
+	return m
+
+def sort_matrix(matrix, value):
+	for line in matrix:
+		if value in line:
+			line.sort()
+	return matrix
+#-----------------------------------------------------------------
+
+
 n = int(input('Enter n: '))
 
 X = [[random.randrange(0,10) for y in range(n)] for x in range(n)]
@@ -11,35 +27,16 @@ for i in range (n):
 
 print('\n\n')
 
-def find_max(matrix):
-	m = matrix[0][0]
-	for i in range (len(matrix)):
-		if max(matrix[i])>m:
-			m=max(matrix[i])
-	return m
+# використання стандартної функцій пошуку максимуму 
+#max_value = max(map(max, X))
+#X = sort_matrix(X, max_value)
 
-def sort_matrix(matrix):
-	m = find_max(matrix)
-	for i in range (len(matrix)):
-		if m in matrix[i]:
-			matrix[i].sort()
-	return matrix
-
-X = sort_matrix(X)
+X = sort_matrix(X, find_max(X))
 
 for i in range (n):
 	print (X[i])
-print('Perfect option:\n\n')
-n = int(input('Enter n: '))
 
-X = [[random.randrange(0,10) for y in range(n)] for x in range(n)]
-
-max_value = max(X)
-for row in X:
-    if max in row:
-        row.sort()
-
-print(X)
+print('\n\n')
 
 print('**********TASK #2**********', end='\n\n')
 import math
