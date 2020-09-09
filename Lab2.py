@@ -35,8 +35,26 @@ X = sort_matrix(X, find_max(X))
 
 for i in range (n):
 	print (X[i])
+<<<<<<< HEAD
 
 print('\n\n')
+=======
+print('Perfect option and my personaly favorite:\n\n')
+
+n = int(input('Enter n: '))
+
+X = [[random.randrange(0,10) for y in range(n)] for x in range(n)]
+
+print(X)
+
+max_value = max(max(X))
+print(max_value)
+for row in X:
+    if max_value in row:
+        row.sort()
+
+print(X)
+>>>>>>> e0d1f06a3f0bc612f42b3e590818483fc7459c1d
 
 print('**********TASK #2**********', end='\n\n')
 import math
